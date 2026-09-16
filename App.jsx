@@ -1,15 +1,17 @@
 ﻿import React from 'react';
 
-import cardApproach from './assets/card-approach.png';
-import cardImpact from './assets/card-impact.png';
 import cardNatureSolutions from './assets/card-nature-solutions.jpg';
 import cardWhatWeDo from './assets/card-what-we-do.png';
+import enterpriseTech from './assets/enterprisetech.jpg';
+import waterInfra from './assets/waterinfra.jpg';
 import heroPositiveWater from './assets/hero-positive-water.jpeg';
 import waterRiskMap from './assets/water-risk-map.jpeg';
+import newLogo from './assets/newlogo.png';
 import aquaForAllLogo from './assets/funder-logos/aqua-for-all-logo.svg';
 import ceoWaterMandateLogo from './assets/funder-logos/ceo-water-mandate-logo.png';
 import luxembourgLogo from './assets/funder-logos/image33.jpeg';
 import ministryLogo from './assets/funder-logos/image34.jpeg';
+import gwcLogo from './assets/funder-logos/gwclogo.png';
 import sdg6Icon from './assets/sdg6icon.png';
 import sdg13Icon from './assets/sdg13icon.png';
 import sdg17Icon from './assets/sdg17icon.png';
@@ -38,7 +40,8 @@ const serviceCards = [
   {
     title: 'Water infrastructure',
     body: 'Water systems and services that strengthen reliable access, delivery, and long-term resilience.',
-    image: cardApproach,
+    image: waterInfra,
+    imageAlt: 'Water infrastructure systems supporting reliable access and delivery',
   },
   {
     title: 'Nature based solutions',
@@ -49,7 +52,8 @@ const serviceCards = [
   {
     title: 'New business models',
     body: 'Water tech and innovation opportunities that scale new models, enterprises, and market solutions.',
-    image: cardImpact,
+    image: enterpriseTech,
+    imageAlt: 'Enterprise technology and innovation driving new water business models',
   },
   {
     title: 'Financial institutions',
@@ -84,13 +88,13 @@ const sdgImpactObjectives = [
 ];
 
 const impactVision =
-  'We deliver measurable water resilience and long-term value creation through metrics aligned with the Volumetric Water Benefit framework (VWB).';
+  'The Facility’s impact framework is designed along four themes: water infrastructure, enterprises and technology, nature‑based solutions, and financial institutions. These themes drive the Facility’s four priority impact pathways.';
 
 const impactIndicatorGroups = [
-  { title: 'Water Quantity' },
-  { title: 'Water Quality' },
-  { title: 'Ecosystem & Resilience' },
-  { title: 'Socio-economic Impact' },
+  { title: 'Delivering WASH access' },
+  { title: 'Improving water quality' },
+  { title: 'Increasing water availability and efficiency, referred to as water replenished' },
+  { title: 'Restoring watersheds and ecosystems' },
 ];
 
 const teamMembers = [
@@ -124,6 +128,11 @@ const committedFunders = [
     logo: ceoWaterMandateLogo,
     cardClass: 'funder-logo-card--landscape funder-logo-card--zoom-wide',
   },
+  {
+    name: 'GWC',
+    logo: gwcLogo,
+    cardClass: 'funder-logo-card--landscape funder-logo-card--gwc',
+  },
 ];
 
 const navLinks = [
@@ -134,9 +143,13 @@ const navLinks = [
 
 function BrandMark() {
   return (
-    <button className="brand" type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Nairiva home">
-      <span className="brand-drop" />
-      <span>Nairiva Invest</span>
+    <button
+      className="brand brand--logo"
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Nairiva home"
+    >
+      <img className="brand-logo" src={newLogo} alt="Nairiva Invest" />
     </button>
   );
 }
@@ -179,7 +192,7 @@ function HomePage() {
           <span className="hero-title-line">along value chains.</span>
         </h1>
         <p>
-          By reducing risk and creating investment-ready opportunities, we enable capital to flow where it is needed most.
+          By blending risk and creating investment-ready opportunities, we enable capital to flow where it is needed most.
         </p>
         <div className="hero-actions">
           <Button variant="outline">Invest</Button>
@@ -302,11 +315,11 @@ function HomePage() {
           <div className="targeted-impact-divider" aria-hidden="true" />
           <div className="targeted-impact-column targeted-impact-column--right">
             <div className="impact-vision-block">
-              <h3 className="targeted-impact-column-title">Our impact vision</h3>
+              <h3 className="targeted-impact-column-title">Our impact approach</h3>
               <p className="impact-vision-text">{impactVision}</p>
             </div>
             <div className="impact-indicators-block">
-              <h3 className="targeted-impact-column-title">Impact Indicators</h3>
+              <h3 className="targeted-impact-column-title">Impact Pathways</h3>
               {impactIndicatorGroups.map((group) => (
                 <div key={group.title} className="impact-indicator-group">
                   <h4>{group.title}</h4>
@@ -354,8 +367,8 @@ function Footer() {
       <div className="footer-contact">
         <p className="section-kicker">Contact details</p>
         <h2>
-          <a href="https://www.nairiva-invest.world/" target="_blank" rel="noopener noreferrer">
-            www.nairiva-invest.world
+          <a href="https://www.nairiva-invest.com/" target="_blank" rel="noopener noreferrer">
+            www.nairiva-invest.com
           </a>
         </h2>
         <p>For investor and partnership conversations around the Global Water Investment Facility.</p>
